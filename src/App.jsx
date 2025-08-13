@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import MyInput from './component/Myinput'
 
 function App() {
 
@@ -22,10 +23,14 @@ function App() {
         <div className='flex items-center justify-center h-screen'>
           <div className='space-y-2'>
 
-            <input ref={searchRef} placeholder='looking for something' />
+            <MyInput myref={searchRef}/>
+
+
             <nav>
               <button className='border border-gray-300 px-4 py-1 rounded' onClick={handleFocus}>Search</button>
             </nav>
+
+            
 
           </div>
         </div>
