@@ -1,15 +1,24 @@
-export default function MyInput({myref}) {
+import { forwardRef } from "react"
 
-    return (
+
+
+    const MyInput=forwardRef((props,searchRef)=>{
+         return (
         <>
 
             <input
                 // ref={searchRef}
-                ref={myref}
+                ref={searchRef}
                 placeholder='looking for something'
             />
 
         </>
 
     )
-}
+
+    })
+
+
+    export default MyInput;
+
+   
