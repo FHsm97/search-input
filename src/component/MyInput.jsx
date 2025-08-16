@@ -1,13 +1,14 @@
 import { forwardRef, useEffect, useState } from "react"
 import useDebounce from "../hooks/useDebounce"
+import useFormInput from "../hooks/useFormInput"
 
 
 
 const MyInput = forwardRef((props, searchRef) => {
 
-    const [searchTerm, setSearchTerm] = useState('')
+    const searchTermProps = useFormInput('')
 
-    const searchText=useDebounce(searchTerm,1000)
+    const searchText=useDebounce(searchTermProps.value,1000)
 
 
     useEffect(()=>{
@@ -27,8 +28,9 @@ const MyInput = forwardRef((props, searchRef) => {
         <>
 
             <input
-                value={searchTerm}
-                onChange={(event) => { setSearchTerm(event.target.value) }}
+                // value={searchTerm}
+                // onChange={(event) => { setSearchTerm(event.target.value) }}
+                {...searchTermProps}
                 // ref={searchRef}
                 ref={searchRef}
                 placeholder='looking for something'
